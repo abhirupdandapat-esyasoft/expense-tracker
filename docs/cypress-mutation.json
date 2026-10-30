@@ -1,0 +1,10 @@
+{
+  "behavior": "Cypress deletion",
+  "exit_code": 1,
+  "caught": true,
+  "evidence": [
+    "1 failing",
+    "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '2', expected '1'.",
+    "+ expected - actual"
+  ]
+}
