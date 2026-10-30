@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', 'coverage', 'cypress/screenshots', 'cypress/videos']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [
@@ -17,5 +17,9 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+  },
+  {
+    files: ['cypress/e2e/**/*.js'],
+    languageOptions: { globals: { cy: 'readonly', describe: 'readonly', it: 'readonly', beforeEach: 'readonly' } },
   },
 ])

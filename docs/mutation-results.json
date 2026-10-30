@@ -1,0 +1,48 @@
+[
+  {
+    "behavior": "amount validation",
+    "command": "npm test -- --run src/expenses.test.js -t rejects invalid amount",
+    "exit_code": 1,
+    "caught": true,
+    "evidence": [
+      "Tests  7 failed | 14 skipped (21)",
+      "\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 7 \u23af\u23af\u23af\u23af\u23af\u23af\u23af",
+      "AssertionError: expected '' to be 'Enter an amount greater than 0.' // Object.is equality",
+      "AssertionError: expected 'Enter a decimal amount.' to be 'Enter an amount greater than 0.' // Object.is equality",
+      "AssertionError: expected 'Amount cannot exceed 100000.' to be 'Enter an amount greater than 0.' // Object.is equality"
+    ]
+  },
+  {
+    "behavior": "category filtering",
+    "command": "npm test -- --run src/App.test.jsx -t filters rows",
+    "exit_code": 1,
+    "caught": true,
+    "evidence": [
+      "Tests  1 failed | 12 skipped (13)",
+      "\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af",
+      "AssertionError: expected [ \u2026(2) ] to have a length of 1 but got 2"
+    ]
+  },
+  {
+    "behavior": "running total",
+    "command": "npm test -- --run src/expenses.test.js -t adds expense amounts",
+    "exit_code": 1,
+    "caught": true,
+    "evidence": [
+      "Tests  1 failed | 20 skipped (21)",
+      "\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af",
+      "AssertionError: expected -650 to be 650 // Object.is equality"
+    ]
+  },
+  {
+    "behavior": "expense deletion",
+    "command": "npm test -- --run src/App.test.jsx -t deletes a filtered expense",
+    "exit_code": 1,
+    "caught": true,
+    "evidence": [
+      "Tests  1 failed | 12 skipped (13)",
+      "\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af",
+      "AssertionError: expected [ \u2026(1) ] to have a length of +0 but got 1"
+    ]
+  }
+]
